@@ -1,7 +1,70 @@
-.hello {
-  color: red;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background-color: bisque;
+  width: 100%;
+  padding: 2rem;
+}
+
+.to-do-list-main-container {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  margin: 4rem auto;
+  gap: 1rem;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.21);
+  padding: 0.5rem;
+}
+
+.input-container {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.21);
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input {
+  border: none;
+  font-size: 1.2rem;
+}
+
+li {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.21);
+  list-style: none;
+  padding: 0.5rem;
+}
+
+li::before {
+  cursor: pointer;
+  content: "";
+  display: inline-block;
+  margin-right: 10px;
+  height: 10px;
+  width: 10px;
+  border: 2px solid rgb(118, 114, 114);
+}
+
+i {
+  cursor: pointer;
+}
+
+.clear-btn {
+  border: none;
+  padding: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: 1s ease-in-out;
+}
+
+.clear-btn:hover {
+  font-size: 2rem;
 }
