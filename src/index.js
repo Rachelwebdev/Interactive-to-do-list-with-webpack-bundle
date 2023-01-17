@@ -1,7 +1,6 @@
-import _ from "lodash";
-import "./style.css";
-import cardDisplay from "./modules/listCard.js";
+import './style.css';
+import cardDisplay from './modules/listCard.js';
 
-window.onload = function () {
+window.addEventListener('load', () => {
   cardDisplay();
-};
+});

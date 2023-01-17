@@ -1,6 +1,6 @@
-import listItems from "./data.js";
+import listItems from './data.js';
 
-const toDoListContainer = document.getElementById("to-do-list-container");
+const toDoListContainer = document.getElementById('to-do-list-container');
 
 const cardDisplay = () => {
   listItems.forEach((item) => {
@@ -9,7 +9,7 @@ const cardDisplay = () => {
           <li class="item-list">${item.description}</li>         
         </ul>
           `;
-    toDoListContainer.insertAdjacentHTML("afterbegin", toDoListItems);
+    toDoListContainer.insertAdjacentHTML('afterbegin', toDoListItems);
   });
 };
 
