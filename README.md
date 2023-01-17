@@ -1,25 +1,25 @@
 # Interactive-to-do-list-with-webpack-bundle
 
-# Fun-to-do-list
-
 <a name="readme-top"></a>
 
 # 📗Table of Contents
 
-- [📖 About the Project](#about-project)
-- [🛠 Built With](#built-with)
-- [Tech Stack](#tech-stack)
-- [Key Features](#key-features)
-- [🚀 Live Demo](#live-demo)
-- [💻 Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Setup](#setup)
-  - [Usage](#usage)
-- [👥 Authors](#authors)
-- [👥 Future Features](#future-features)
-- [🤝 Contributing](#contributing)
-- [🙏 Acknowledgements](#acknowledgements)
-- [📝 License](#license)
+- [Interactive-to-do-list-with-webpack-bundle](#interactive-to-do-list-with-webpack-bundle)
+- [📗Table of Contents](#table-of-contents)
+- [📖 \[Fun-to-do-list\] ](#-fun-to-do-list-)
+  - [🛠 Built With ](#-built-with-)
+    - [Tech Stack ](#tech-stack-)
+    - [Key Features ](#key-features-)
+  - [🚀 Live Demo ](#-live-demo-)
+  - [💻 Getting Started ](#-getting-started-)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+    - [Install](#install)
+    - [Usage](#usage)
+  - [👥 Author ](#-author-)
+    - [Future Features ](#future-features-)
+  - [🙏 Acknowledgments ](#-acknowledgments-)
+  - [📝 License ](#-license-)
 
 <!-- PROJECT DESCRIPTION -->
 
@@ -55,7 +55,7 @@
 
 >
 
-- [Live Demo Link](https://rachelwebdev.github.io/Fun-to-do-list/)
+- [Live Demo Link]()
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
