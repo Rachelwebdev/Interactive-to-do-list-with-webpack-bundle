@@ -6,7 +6,7 @@
 
 - [Interactive-to-do-list-with-webpack-bundle](#interactive-to-do-list-with-webpack-bundle)
 - [📗Table of Contents](#table-of-contents)
-- [📖 \[Fun-to-do-list\] ](#-fun-to-do-list-)
+- [📖 \[Interactive-to-do-list\] ](#-interactive-to-do-list-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -23,9 +23,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Fun-to-do-list] <a name="about-project"></a>
+# 📖 [Interactive-to-do-list] <a name="about-project"></a>
 
-**[Fun-to-do-listo]** is a project that keeps a list of the tasks that the user needs to complete in a day. You can add tasks, delete tasks, mark tasks as complete, save tasks for future reference
+**[Interactive-to-do-list]** is a project that keeps a list of the tasks that the user needs to complete in a day. You can add tasks, delete tasks, mark tasks as complete, save tasks for future reference
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -116,7 +116,7 @@ Contributions, issues, and feature requests are welcome!
 🙏 Acknowledgments
 Give credit to everyone who inspired your codebase.
 
-I would like to thank everyone who made reviews on this project and gave constructive comments
+I would like to thank Microverse for the learning materials and technical support provided to work on this project
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
