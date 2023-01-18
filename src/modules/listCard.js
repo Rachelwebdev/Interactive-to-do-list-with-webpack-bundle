@@ -1,7 +1,8 @@
-import listItems from "./data.js";
-const toDoListContainer = document.getElementById("to-do-list-container");
+import listItems from './data.js';
 
-const cardDisplay = () => {
+const toDoListContainer = document.getElementById('to-do-list-container');
+
+const ListItemDisplay = () => {
   listItems
     .sort((a, b) => a.index - b.index)
     .forEach((item) => {
@@ -11,4 +12,4 @@ const cardDisplay = () => {
     });
 };
 
-export default cardDisplay;
+export default ListItemDisplay;
