@@ -1,16 +1,14 @@
-import listItems from './data.js';
-
-const toDoListContainer = document.getElementById('to-do-list-container');
+import listItems from "./data.js";
+const toDoListContainer = document.getElementById("to-do-list-container");
 
 const cardDisplay = () => {
-  listItems.forEach((item) => {
-    const toDoListItems = `
-        <ul>
-          <li class="item-list">${item.description}</li>         
-        </ul>
-          `;
-    toDoListContainer.insertAdjacentHTML('afterbegin', toDoListItems);
-  });
+  listItems
+    .sort((a, b) => a.index - b.index)
+    .forEach((item) => {
+      toDoListContainer.innerHTML += `
+      <li class="to-do-task" value="index">${item.description}</li>
+    `;
+    });
 };
 
 export default cardDisplay;

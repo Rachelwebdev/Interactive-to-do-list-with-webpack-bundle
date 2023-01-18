@@ -1,6 +1,7 @@
-import './style.css';
-import cardDisplay from './modules/listCard.js';
+import "./style.css";
+import cardDisplay from "./modules/listCard";
 
-window.addEventListener('load', () => {
-  cardDisplay();
-});
+const render = () => {
+  window.addEventListener("load", cardDisplay());
+};
+render();
