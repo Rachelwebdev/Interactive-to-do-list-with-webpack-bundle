@@ -1,6 +1,6 @@
-import listItems from './data.js';
+import listItems from "./data.js";
 
-const toDoListContainer = document.getElementById('to-do-list-container');
+const toDoListContainer = document.getElementById("to-do-list-container");
 
 const ListItemDisplay = () => {
   listItems
