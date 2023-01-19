@@ -1,22 +1,33 @@
 // Import statements
 import listItems from "./data.js";
-import addTask from "./addRemove.js";
+import { removeTask } from "./addRemove.js";
+import { forEach } from "lodash";
+
 // Create Variables
-const enterIcon = document.querySelector(".fa-arrow-turn-down");
+
 const toDoListContainer = document.getElementById("to-do-list-container");
 
-const ListItemDisplay = () => {
+const listItemDisplay = () => {
+  toDoListContainer.innerHTML = "";
   listItems
     .sort((a, b) => a.index - b.index)
     .forEach((item) => {
-      console.log(item);
       toDoListContainer.innerHTML += `
-      <li class="to-do-task" value="index">${item}</li>
-    `;
+        <li id="li-element">
+            <input type="checkbox" id="${item.id}" value="${item.completed}" />${item.task}            
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+            <i class="fa-solid fa-trash"></i>        
+          </li>
+      `;
     });
-};
-enterIcon.addEventListener("click", () => {
-  addTask();
-});
+  const deleteIcon = document.querySelectorAll(".fa-trash");
 
-export default ListItemDisplay;
+  for (let i = 0; i < deleteIcon.length; i += 1) {
+    deleteIcon[i].addEventListener("click", (e) => {
+      removeTask(e.target.parentElement);
+      console.log(listItems);
+    });
+  }
+};
+
+export default listItemDisplay;

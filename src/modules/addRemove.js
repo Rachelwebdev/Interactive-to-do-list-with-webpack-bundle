@@ -4,29 +4,34 @@ import listItemDisplay from "./listCard.js";
 
 // Variables declaration
 const inputField = document.getElementById("inputField");
-const kebabMenu = document.querySelector(".fa-ellipsis-vertical");
+const editButton = document.gquerySelector("fa-ellipsis-vertical");
 
-const addTask = () => {
+export const addTask = () => {
   let inputValue = inputField.value;
   if (inputValue.trim() === "") {
     alert("input is empty");
     return;
   }
-  listItems.push(inputValue);
+  const newTask = {
+    task: inputValue,
+    id: listItems.length,
+    completed: false,
+  };
+  listItems.push(newTask);
   console.log(listItems);
   inputField.value = "";
   listItemDisplay();
 };
 
-const removeTask = () => {
-  let inputValue = inputField.value;
-  for (let i = 0; i < listItems.length; i++) {
-    if (inputValue === listItems[i]) {
-      listItems.splice(i, 1);
-      console.log(listItems);
-      break;
+export const removeTask = (id) => {
+  let count;
+  listItems.filter((val, ind, arr) => {
+    if (val.task === id.innerText) {
+      console.log("it works");
+      arr.splice(ind, 1);
+      return true;
     }
-  }
+    return false;
+  });
+  listItemDisplay();
 };
-
-export default addTask;

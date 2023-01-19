@@ -1,7 +1,15 @@
 import "./style.css";
-import ListItemDisplay from "./modules/listCard.js";
+import listItemDisplay from "./modules/listCard.js";
+import { addTask } from "./modules/addRemove.js";
+
+// Variables
+const deleteButton = document.querySelector(".btn-add");
+
+deleteButton.addEventListener("click", () => {
+  addTask();
+});
 
 const render = () => {
-  window.addEventListener("load", ListItemDisplay());
+  window.addEventListener("load", listItemDisplay());
 };
 render();

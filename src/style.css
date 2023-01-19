@@ -15,6 +15,7 @@ body {
   flex-direction: column;
   margin: 4rem auto;
   gap: 1rem;
+  width: 80%;
 }
 
 .header-container {
@@ -38,23 +39,42 @@ input {
   font-size: 1.2rem;
 }
 
+.btn-add {
+  padding: 12px;
+}
+
 li {
   border-bottom: 1px solid rgba(0, 0, 0, 0.21);
   list-style: none;
-  padding: 0.5rem;
-}
-
-li::before {
-  cursor: pointer;
-  content: "";
-  display: inline-block;
-  margin-right: 10px;
-  height: 10px;
-  width: 10px;
-  border: 2px solid rgb(118, 114, 114);
+  padding: 1.5rem;
 }
 
 i {
+  cursor: pointer;
+}
+
+#to-do-list-container {
+  position: relative;
+}
+
+/* .icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+} */
+
+.fa-ellipsis-vertical {
+  position: absolute;
+  right: 20px;
+}
+
+.fa-trash {
+  position: absolute;
+  right: 50px;
+}
+
+.fa-ellipsis-vertical:hover {
   cursor: pointer;
 }
 
@@ -68,4 +88,17 @@ i {
 
 .clear-btn:hover {
   font-size: 2rem;
+}
+
+.kebab {
+  float: right;
+  padding: 0 10px;
+}
+
+.circle {
+  width: 4px;
+  height: 4px;
+  background-color: black;
+  border-radius: 50%;
+  margin-bottom: 5px;
 }
