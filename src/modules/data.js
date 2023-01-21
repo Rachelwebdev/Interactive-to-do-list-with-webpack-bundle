@@ -1,20 +1,9 @@
-const listItems = [
-  {
-    description: 'Take out the trash',
-    completed: false,
-    index: 0,
-  },
-  {
-    description: 'Finish weekly task',
-    completed: false,
-    index: 2,
-  },
+export const updateLocalStorage = (toDoListArray) => {
+  localStorage.setItem('toDoList', JSON.stringify(toDoListArray));
+};
 
-  {
-    description: 'Study JavaScript',
-    completed: false,
-    index: 1,
-  },
-];
-
-export default listItems;
+export const getLocalStorage = () => {
+  const localStorageData = JSON.parse(localStorage.getItem('toDoList')) || [];
+  const toDoListArray = localStorageData;
+  return toDoListArray;
+};
