@@ -2,16 +2,6 @@ import { updateLocalStorage, getLocalStorage } from "./data.js";
 
 const toDoList = document.querySelector(".toDoContainer");
 
-// Add Task
-export const addTask = (toDoListArray, task) => {
-  toDoListArray.push({
-    task,
-    completed: false,
-    id: toDoListArray.length + 1,
-  });
-  updateLocalStorage(toDoListArray);
-};
-
 export const renderToDoList = (toDoListArray) => {
   toDoList.innerHTML = "";
 
@@ -40,6 +30,16 @@ export const renderToDoList = (toDoListArray) => {
     toDoItem.appendChild(crossIcon);
     toDoList.appendChild(toDoItem);
   });
+};
+
+// Add Task
+export const addTask = (toDoListArray, task) => {
+  toDoListArray.push({
+    task,
+    completed: false,
+    id: toDoListArray.length + 1,
+  });
+  updateLocalStorage(toDoListArray);
 };
 
 // Edit Task
