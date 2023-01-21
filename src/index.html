@@ -1,40 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script
       src="https://kit.fontawesome.com/be8db3d534.js"
       crossorigin="anonymous"
     ></script>
-    <title>Rachel's To-Do List</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
   </head>
   <body>
-    <main class="to-do-list-main-container">
-      <div class="header-container">
-        <h3 class="header">Today's To Do</h3>
-        <i class="fa-solid fa-arrows-rotate"></i>
-      </div>
-      <div class="input-container">
-        <input type="text" id="inputField" placeholder="Add to your list..." />
-        <button class="btn-add">Add me🥺</button>
-      </div>
-      <div>
-        <ul id="to-do-list-container"></ul>
-      </div>
-
-      <!-- <div class="ul">
-        <li>
-          <input type="checkbox" name="Ibukun" id="checkbox" /> Ibukun
-          <span class="kebab">
-            <div class="circle"></div>
-            <div class="circle"></div>
-            <div class="circle"></div>
-          </span>
-        </li>
-        <i class="fa-solid fa-ellipsis-vertical"></i>
-      </div> -->
-      <button class="clear-btn">Clear all completed</button>
+    <main class="main">
+      <section class="toDo_list">
+        <div class="title">
+          <h1 class="toDo_title">Today's To Do</h1>
+        </div>
+        <div class="container">
+          <input
+            type="text"
+            name="task"
+            id="task"
+            class="inputField"
+            placeholder="Add new task"
+          />
+          <button class="insert-btn">Insert</button>
+        </div>
+        <ul class="toDoContainer"></ul>
+        <button class="clearbtn">Clear all completed</button>
+      </section>
     </main>
   </body>
 </html>
