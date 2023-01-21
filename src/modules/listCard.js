@@ -4,7 +4,11 @@ const toDoList = document.querySelector(".toDoContainer");
 
 // Add Task
 export const addTask = (toDoListArray, task) => {
-  toDoListArray.push({ task, completed: false, id: toDoListArray.length + 1 });
+  toDoListArray.push({
+    task,
+    completed: false,
+    id: toDoListArray.length + 1,
+  });
   updateLocalStorage(toDoListArray);
 };
 
@@ -32,7 +36,7 @@ export const renderToDoList = (toDoListArray) => {
     }
     const crossIcon = document.createElement("span");
     crossIcon.classList.add("trash-can");
-    crossIcon.innerHTML = "🗑️";
+    crossIcon.innerHTML = `<i class="fa-solid fa-trash"></i>`;
     toDoItem.appendChild(crossIcon);
     toDoList.appendChild(toDoItem);
   });
