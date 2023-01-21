@@ -1,4 +1,4 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -57,12 +57,15 @@ i {
   position: relative;
 }
 
-/* .icons {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-} */
+.completed {
+  text-decoration: line-through;
+}
+
+.alert {
+  color: red;
+  font-weight: bold;
+  padding-left: 1rem;
+}
 
 .fa-ellipsis-vertical {
   position: absolute;
@@ -101,4 +104,123 @@ i {
   background-color: black;
   border-radius: 50%;
   margin-bottom: 5px;
+} */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100vh;
+}
+
+.title {
+  color: rgb(42, 42, 43);
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #d3d3d3;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.toDo_list {
+  min-width: 300px;
+  width: 50%;
+  max-width: 1000px;
+  box-shadow: 10px 14px 14px -5px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  padding: 14px;
+}
+
+.inputField {
+  width: 90%;
+  height: 30px;
+  padding: 0 0 0 7px;
+  border: 1px solid #aaa;
+  margin: 0 14px 0 0;
+}
+
+.clearbtn {
+  width: 100%;
+  height: 40px;
+  margin: 14px 0 0 0;
+  border: none;
+  cursor: pointer;
+  background-color: rgb(42, 42, 43);
+  color: #fff;
+  outline: none;
+}
+
+.insert-btn {
+  height: 30px;
+  background-color: rgb(42, 42, 43);
+  color: #fff;
+  border: none;
+  padding: 0 14px;
+  cursor: pointer;
+  outline: none;
+}
+
+.insert-btn:hover,
+.clearbtn:hover {
+  font-size: larger;
+}
+
+.toDo_title {
+  margin-top: 14px;
+  padding: 0 14px;
+}
+
+.toDoContainer {
+  list-style: none;
+  padding: 0 14px;
+  margin: 0;
+}
+
+.toDoContainer-li {
+  display: flex;
+  padding: 7px 0;
+  border-bottom: 1px solid #aaa;
+}
+
+.toDoContainer-li:last-child {
+  border-bottom: none;
+  padding: 7px 0 0 0;
+}
+
+.toDoContainer-li-text {
+  width: 190%;
+  padding: 0 7px;
+  background-color: #fff;
+  border: none;
+  color: black;
+}
+
+.toDoContainer-li-text:hover {
+  background-color: #eee;
+}
+
+.toDoContainer-li-text:focus {
+  background-color: #eee;
+}
+
+.trash-can {
+  padding-right: 5px;
+  cursor: pointer;
+  text-decoration: none !important;
+}
+
+.completed {
+  text-decoration: line-through;
 }
