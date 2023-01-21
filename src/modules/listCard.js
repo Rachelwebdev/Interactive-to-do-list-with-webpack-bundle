@@ -7,28 +7,28 @@ export const renderToDoList = (toDoListArray) => {
 
   toDoListArray = getLocalStorage();
   toDoListArray.forEach((toDo) => {
-    const toDoItem = document.createElement("li");
-    toDoItem.classList.add("toDoContainer-li");
+    const listItemTask = document.createElement("li");
+    listItemTask.classList.add("toDoContainer-li");
 
     const toDoCheckbox = document.createElement("input");
     toDoCheckbox.classList.add("toDoContainer-li-checkbox");
     toDoCheckbox.type = "checkbox";
     toDoCheckbox.checked = toDo.completed;
-    toDoItem.appendChild(toDoCheckbox);
+    listItemTask.appendChild(toDoCheckbox);
 
     const toDoText = document.createElement("input");
     toDoText.classList.add("toDoContainer-li-text");
     toDoText.value = toDo.task;
-    toDoItem.appendChild(toDoText);
+    listItemTask.appendChild(toDoText);
 
     if (toDo.completed) {
       toDoText.classList.add("completed");
     }
-    const crossIcon = document.createElement("span");
-    crossIcon.classList.add("trash-can");
-    crossIcon.innerHTML = '<i class="fa-solid fa-trash"></i>';
-    toDoItem.appendChild(crossIcon);
-    toDoList.appendChild(toDoItem);
+    const deleteIcon = document.createElement("span");
+    deleteIcon.classList.add("trash-can");
+    deleteIcon.innerHTML = '<i class="fa-solid fa-trash"></i>';
+    listItemTask.appendChild(deleteIcon);
+    toDoList.appendChild(listItemTask);
   });
 };
 
