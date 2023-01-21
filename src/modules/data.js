@@ -1,3 +1,9 @@
-const listItems = [];
+export const updateLocalStorage = (toDoListArray) => {
+  localStorage.setItem("toDoList", JSON.stringify(toDoListArray));
+};
 
-export default listItems;
+export const getLocalStorage = () => {
+  const localStorageData = JSON.parse(localStorage.getItem("toDoList")) || [];
+  let toDoListArray = localStorageData;
+  return toDoListArray;
+};
