@@ -1,31 +1,31 @@
-import { updateLocalStorage, getLocalStorage } from "./data.js";
+import { updateLocalStorage, getLocalStorage } from './data.js';
 
-const toDoList = document.querySelector(".toDoContainer");
+const toDoList = document.querySelector('.toDoContainer');
 
 export const renderToDoList = (toDoListArray) => {
-  toDoList.innerHTML = "";
+  toDoList.innerHTML = '';
 
   toDoListArray = getLocalStorage();
   toDoListArray.forEach((toDo) => {
-    const listItemTask = document.createElement("li");
-    listItemTask.classList.add("toDoContainer-li");
+    const listItemTask = document.createElement('li');
+    listItemTask.classList.add('toDoContainer-li');
 
-    const toDoCheckbox = document.createElement("input");
-    toDoCheckbox.classList.add("toDoContainer-li-checkbox");
-    toDoCheckbox.type = "checkbox";
+    const toDoCheckbox = document.createElement('input');
+    toDoCheckbox.classList.add('toDoContainer-li-checkbox');
+    toDoCheckbox.type = 'checkbox';
     toDoCheckbox.checked = toDo.completed;
     listItemTask.appendChild(toDoCheckbox);
 
-    const toDoText = document.createElement("input");
-    toDoText.classList.add("toDoContainer-li-text");
+    const toDoText = document.createElement('input');
+    toDoText.classList.add('toDoContainer-li-text');
     toDoText.value = toDo.task;
     listItemTask.appendChild(toDoText);
 
     if (toDo.completed) {
-      toDoText.classList.add("completed");
+      toDoText.classList.add('completed');
     }
-    const deleteIcon = document.createElement("span");
-    deleteIcon.classList.add("trash-can");
+    const deleteIcon = document.createElement('span');
+    deleteIcon.classList.add('trash-can');
     deleteIcon.innerHTML = '<i class="fa-solid fa-trash"></i>';
     listItemTask.appendChild(deleteIcon);
     toDoList.appendChild(listItemTask);
@@ -44,14 +44,14 @@ export const addTask = (toDoListArray, task) => {
 
 // Edit Task
 export const editTask = (e, toDoListArray) => {
-  const clickedTask = e.target.closest(".toDoContainer-li-text");
+  const clickedTask = e.target.closest('.toDoContainer-li-text');
   clickedTask.disabled = false;
   clickedTask.focus();
   const taskText = clickedTask.value;
-  clickedTask.addEventListener("keyPress", (e) => {
-    if (e.key === "Enter" && clickedTask.value !== "") {
+  clickedTask.addEventListener('keyPress', (e) => {
+    if (e.key === 'Enter' && clickedTask.value !== '') {
       const taskIndex = toDoListArray.findIndex(
-        (task) => task.task === taskText
+        (task) => task.task === taskText,
       );
       toDoListArray[taskIndex].task = clickedTask.value;
       clickedTask.disabled = true;
@@ -63,10 +63,10 @@ export const editTask = (e, toDoListArray) => {
 
 // Delete Task
 export const deleteTask = (e, toDoListArray) => {
-  const clickedCross = e.target.closest(".trash-can");
+  const clickedCross = e.target.closest('.trash-can');
   const clickedTask = clickedCross.previousElementSibling;
   const taskIndex = toDoListArray.findIndex(
-    (task) => task.task === clickedTask.value
+    (task) => task.task === clickedTask.value,
   );
   toDoListArray.splice(taskIndex, 1);
   toDoListArray.forEach((task, index) => {
@@ -88,10 +88,10 @@ export const clearCompleted = (toDoListArray) => {
 // Marked Complete
 
 export const markTask = (e, toDoListArray) => {
-  const clickedCheckbox = e.target.closest(".toDoContainer-li-checkbox");
+  const clickedCheckbox = e.target.closest('.toDoContainer-li-checkbox');
   const clickedTask = clickedCheckbox.nextElementSibling;
   const taskIndex = toDoListArray.findIndex(
-    (task) => task.task === clickedTask.value
+    (task) => task.task === clickedTask.value,
   );
   toDoListArray = getLocalStorage();
   toDoListArray[taskIndex].completed = !toDoListArray[taskIndex].completed;
