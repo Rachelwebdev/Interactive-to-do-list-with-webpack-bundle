@@ -1,16 +1,14 @@
 import { updateLocalStorage } from "./data.js";
-import { renderToDoList } from "./listCard.js";
+import { displayListTasks } from "./listCard.js";
 
-export const deleteTask = (e, toDoListArray) => {
-  const clickedCross = e.target.closest(".trash-can");
-  const clickedTask = clickedCross.previousElementSibling;
-  const taskIndex = toDoListArray.findIndex(
-    (task) => task.task === clickedTask.value
-  );
-  toDoListArray.splice(taskIndex, 1);
-  toDoListArray.forEach((task, index) => {
-    task.id = index + 1;
+export const removeTask = (event, taskList) => {
+  const clickedElement = event.target.closest(".trash-can");
+  const taskToRemove = clickedElement.previousElementSibling.value;
+  const index = taskList.findIndex((task) => task.task === taskToRemove);
+  taskList.splice(index, 1);
+  taskList.forEach((task, idx) => {
+    task.id = idx + 1;
   });
-  updateLocalStorage(toDoListArray);
-  renderToDoList(toDoListArray);
+  updateLocalStorage(taskList);
+  displayListTasks(taskList);
 };

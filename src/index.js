@@ -1,14 +1,14 @@
 import "./style.css";
-import { addTask } from "./modules/addItem.js";
-import { editTask } from "./modules/editTask.js";
-import { deleteTask } from "./modules/deleteTask.js";
-import { clearCompleted } from "./modules/clearCompleted.js";
-import { markTask } from "./modules/markTask.js";
-import { renderToDoList } from "./modules/listCard";
+import { addNewTask } from "./modules/addItem.js";
+import { modifyTask } from "./modules/editTask.js";
+import { removeTask } from "./modules/deleteTask.js";
+import { removeCompleted } from "./modules/clearCompleted.js";
+import { completeTask } from "./modules/markTask.js";
+import { displayListTasks } from "./modules/listCard";
 
 import {
   updateLocalStorage,
-  getLocalStorage as toDoTasks,
+  getLocalStorage as tasksList,
 } from "./modules/data.js";
 
 // Declare variables
@@ -22,42 +22,44 @@ const clearCompletedBtn = document.querySelector(".clearbtn");
 
 addTaskBtn.addEventListener("click", () => {
   if (input.value !== "") {
-    addTask(toDoTasks(), input.value);
+    addNewTask(tasksList(), input.value);
     input.value = "";
-    updateLocalStorage(toDoTasks());
-    renderToDoList(toDoTasks());
+    updateLocalStorage(tasksList());
+    displayListTasks(tasksList());
+  }
+});
+
+// DELETE TASK
+
+todoList.addEventListener("click", (event) => {
+  if (event.target.closest(".trash-can")) {
+    removeTask(event, tasksList());
   }
 });
 
 // EDIT TASK EVENT LISTENER
 
-todoList.addEventListener("click", (e) => {
-  if (e.target.closest(".toDoContainer-li-text")) {
-    editTask(e, toDoTasks());
-  }
-});
-
-todoList.addEventListener("click", (e) => {
-  if (e.target.closest(".trash-can")) {
-    deleteTask(e, toDoTasks());
+todoList.addEventListener("click", (event) => {
+  if (event.target.closest(".toDoContainer-li-text")) {
+    modifyTask(event, tasksList());
   }
 });
 
 // CLEAR COMPLETED EVENT LISTENER
 clearCompletedBtn.addEventListener("click", () => {
-  const toDoList = clearCompleted(toDoTasks());
+  const toDoList = removeCompleted(tasksList());
   updateLocalStorage(toDoList);
-  renderToDoList(toDoTasks());
+  displayListTasks(tasksList());
 });
 
 // MARK TASK EVENT LISTENER
-todoList.addEventListener("click", (e) => {
-  if (e.target.closest(".toDoContainer-li-checkbox")) {
-    markTask(e, toDoTasks());
+todoList.addEventListener("click", (event) => {
+  if (event.target.closest(".toDoContainer-li-checkbox")) {
+    completeTask(event, tasksList());
   }
 });
 
 const render = () => {
-  window.addEventListener("load", renderToDoList(toDoTasks()));
+  window.addEventListener("load", displayListTasks(tasksList()));
 };
 render();

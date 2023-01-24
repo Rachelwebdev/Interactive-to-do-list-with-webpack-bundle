@@ -1,14 +1,13 @@
-import { getLocalStorage, updateLocalStorage } from "./data.js";
-import { renderToDoList } from "./listCard.js";
+import { updateLocalStorage } from "./data.js";
+import { displayListTasks } from "./listCard.js";
 
-export const markTask = (e, toDoListArray) => {
-  const clickedCheckbox = e.target.closest(".toDoContainer-li-checkbox");
-  const clickedTask = clickedCheckbox.nextElementSibling;
-  const taskIndex = toDoListArray.findIndex(
-    (task) => task.task === clickedTask.value
-  );
-  toDoListArray = getLocalStorage();
-  toDoListArray[taskIndex].completed = !toDoListArray[taskIndex].completed;
-  updateLocalStorage(toDoListArray);
-  renderToDoList(toDoListArray);
+// Mark Completed Tasks
+
+export const completeTask = (event, taskList) => {
+  const clickedCheckbox = event.target.closest(".toDoContainer-li-checkbox");
+  const taskToComplete = clickedCheckbox.nextElementSibling.value;
+  const index = taskList.findIndex((task) => task.task === taskToComplete);
+  taskList[index].completed = !taskList[index].completed;
+  updateLocalStorage(taskList);
+  displayListTasks(taskList);
 };

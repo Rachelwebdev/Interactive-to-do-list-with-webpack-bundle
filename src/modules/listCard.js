@@ -2,11 +2,11 @@ import { getLocalStorage } from "./data.js";
 
 const toDoList = document.querySelector(".toDoContainer");
 
-export const renderToDoList = (toDoListArray) => {
+export const displayListTasks = (tasksArray) => {
   toDoList.innerHTML = "";
 
-  toDoListArray = getLocalStorage();
-  toDoListArray.forEach((toDo) => {
+  tasksArray = getLocalStorage();
+  tasksArray.forEach((toDo) => {
     const listItemTask = document.createElement("li");
     listItemTask.classList.add("toDoContainer-li");
 

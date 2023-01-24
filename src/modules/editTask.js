@@ -1,20 +1,34 @@
 import { updateLocalStorage } from "./data.js";
-import { renderToDoList } from "./listCard.js";
+import { displayListTasks } from "./listCard.js";
 
-export const editTask = (e, toDoListArray) => {
-  const clickedTask = e.target.closest(".toDoContainer-li-text");
+// export const editTask = (e, tasksArray) => {
+//   const clickedTask = e.target.closest(".toDoContainer-li-text");
+//   clickedTask.disabled = false;
+//   clickedTask.focus();
+//   const taskText = clickedTask.value;
+//   clickedTask.addEventListener("click", (event) => {
+//     if (clickedTask.value !== "") {
+//       const taskIndex = tasksArray.findIndex((task) => task.task === taskText);
+//       tasksArray[taskIndex].task = clickedTask.value;
+//       clickedTask.disabled = true;
+//       updateLocalStorage(tasksArray);
+//       displayListTasks(tasksArray);
+//     }
+//   });
+// };
+
+export const modifyTask = (event, taskList) => {
+  const clickedTask = event.target.closest(".toDoContainer-li-text");
   clickedTask.disabled = false;
   clickedTask.focus();
   const taskText = clickedTask.value;
-  clickedTask.addEventListener("keyPress", (e) => {
-    if (e.key === "Enter" && clickedTask.value !== "") {
-      const taskIndex = toDoListArray.findIndex(
-        (task) => task.task === taskText
-      );
-      toDoListArray[taskIndex].task = clickedTask.value;
+  clickedTask.addEventListener("click", (event) => {
+    if (clickedTask.value !== "") {
+      const taskIndex = taskList.findIndex((task) => task.task === taskText);
+      taskList[taskIndex].task = clickedTask.value;
       clickedTask.disabled = true;
-      updateLocalStorage(toDoListArray);
-      renderToDoList(toDoListArray);
+      updateLocalStorage(taskList);
+      displayListTasks(taskList);
     }
   });
 };

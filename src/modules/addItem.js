@@ -1,11 +1,11 @@
 import { updateLocalStorage } from "./data.js";
 
 // Add Task
-export const addTask = (toDoListArray, task) => {
-  toDoListArray.push({
-    task,
+export const addNewTask = (taskList, newTask) => {
+  taskList.push({
+    task: newTask,
     completed: false,
-    id: toDoListArray.length + 1,
+    id: taskList.length + 1,
   });
-  updateLocalStorage(toDoListArray);
+  updateLocalStorage(taskList);
 };
