@@ -18,16 +18,6 @@ const addTaskBtn = document.querySelector(".insert-btn");
 
 const clearCompletedBtn = document.querySelector(".clearbtn");
 
-// ADD TASK EVENT LISTENER FOR KEYPRESS EVENT
-
-input.addEventListener("keypress", (e) => {
-  if (e.key === "Enter" && input.value !== "") {
-    addTask(toDoTasks(), input.value);
-    input.value = "";
-    renderToDoList(toDoTasks());
-  }
-});
-
 // ADD TASK EVENT LISTENER FOR CLICK EVENT
 
 addTaskBtn.addEventListener("click", () => {
