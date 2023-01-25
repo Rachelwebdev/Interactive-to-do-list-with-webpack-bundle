@@ -9,4 +9,4 @@ const mockStorage = () => {
   };
 };
 
-export const mockLocalStorage = mockStorage();
+export default mockStorage;
