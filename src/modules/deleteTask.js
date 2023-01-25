@@ -1,7 +1,7 @@
 import { updateLocalStorage } from "./data.js";
 import { displayListTasks } from "./listCard.js";
 
-export const removeTask = (event, taskList) => {
+export const removeTask = (taskList, event) => {
   const clickedElement = event.target.closest(".trash-can");
   const taskToRemove = clickedElement.previousElementSibling.value;
   const index = taskList.findIndex((task) => task.task === taskToRemove);
@@ -12,3 +12,4 @@ export const removeTask = (event, taskList) => {
   updateLocalStorage(taskList);
   displayListTasks(taskList);
 };
+export default removeTask;
