@@ -31,11 +31,17 @@ addTaskBtn.addEventListener("click", () => {
 
 // DELETE TASK
 
-todoList.addEventListener("click", (event) => {
-  if (event.target.closest(".trash-can")) {
-    removeTask(event, tasksList());
-  }
-});
+// todoList.addEventListener("click", (event) => {
+//   if (event.target .closest(".trash-can")) {
+//     removeTask(event, tasksList());
+//   }
+// });
+
+// todoList.addEventListener("click", (event) => {
+//   if (event.target && event.target.nodeName === "trash-can") {
+//     removeTask(event, tasksList());
+//   }
+// });
 
 // EDIT TASK EVENT LISTENER
 

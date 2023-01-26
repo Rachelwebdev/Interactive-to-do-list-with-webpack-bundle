@@ -1,5 +1,7 @@
 import { addNewTask } from "../addItem.js";
-import {removeTask}
+import { removeTask } from "../deleteTask.js";
+import { ListItems } from "../addItem.js";
+
 // Testing Add Task Function
 describe("add new task to list", () => {
   const testValue = [

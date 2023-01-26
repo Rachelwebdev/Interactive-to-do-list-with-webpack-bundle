@@ -1,4 +1,4 @@
-import { updateLocalStorage, getLocalStorage } from "../data.js";
+import { updateLocalStorage } from "../data.js";
 
 import { addNewTask } from "../addItem.js";
 
