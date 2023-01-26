@@ -1,6 +1,6 @@
-import { updateLocalStorage } from './data.js';
-import { displayListTasks } from './listCard.js';
-import { ListItems } from './addItem.js';
+import { updateLocalStorage } from "./data.js";
+import { displayListTasks } from "./listCard.js";
+import { ListItems } from "./addItem.js";
 
 export const removeTask = (taskList, index) => {
   const updatedList = ListItems.filter((item) => item.index !== index);
