@@ -1,9 +1,10 @@
-const removeCompleted = (taskList) => {
-  taskList = taskList.filter((task) => !task.completed);
-  taskList.forEach((task, idx) => {
-    task.id = idx + 1;
+import { ListItems } from './addItem.js';
+
+const removeCompleted = (id, completed) => {
+  ListItems.filter((element) => element.id === id).forEach((element) => {
+    element.completed = completed;
   });
-  return taskList;
+  return ListItems;
 };
 
 export default removeCompleted;

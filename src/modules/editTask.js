@@ -1,12 +1,13 @@
-import { updateLocalStorage } from "./data.js";
-import { displayListTasks } from "./listCard.js";
-import { ListItems } from "./addItem.js";
+// import { updateLocalStorage } from './data.js';
+// import { displayListTasks } from './listCard.js';
+import { ListItems } from './addItem.js';
 
 const modifyTask = (id, task) => {
   ListItems.filter((element) => element.id === id).forEach((element) => {
     element.task = task;
   });
   return ListItems;
+
   // const clickedTask = event.target.closest('.toDoContainer-li-text');
   // clickedTask.disabled = false;
   // clickedTask.focus();
