@@ -6,8 +6,6 @@ describe('MOK DOM Manipulation', () => {
   test('Check if tasks are properly displayed', () => {
     document.body.innerHTML = '<ul class="toDoContainer" id="list"></ul>';
     const toDoList = document.querySelector('.toDoContainer');
-
-    toDoList.innerHTML = '';
     ListItems.forEach((toDo) => {
       const listItemTask = document.createElement('li');
       listItemTask.classList.add('toDoContainer-li');
