@@ -1,4 +1,5 @@
-import { updateLocalStorage } from "./data.js";
+import { updateLocalStorage } from './data.js';
+
 export const ListItems = [];
 
 // Add Task
