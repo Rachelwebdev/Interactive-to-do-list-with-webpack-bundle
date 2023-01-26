@@ -1,8 +1,8 @@
-import { updateLocalStorage } from './data.js';
+import { updateLocalStorage } from "./data.js";
+export const ListItems = [];
 
 // Add Task
 export const addNewTask = (taskList, newTask) => {
-  const ListItems = [];
   ListItems.push({
     task: newTask,
     completed: false,
@@ -10,4 +10,3 @@ export const addNewTask = (taskList, newTask) => {
   });
   updateLocalStorage(taskList);
 };
-export default addNewTask;
