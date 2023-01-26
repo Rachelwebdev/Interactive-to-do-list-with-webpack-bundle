@@ -20,3 +20,18 @@ describe("add new task to list", () => {
     expect(addNewTask("This is the first item")).toEqual(testValue.id);
   });
 });
+
+// Testing Delete Task Function
+describe("test if the delete task active", () => {
+  test("check if addItem function exists", () => {
+    expect(addNewTask).toBeDefined();
+  });
+  addNewTask("This is the first task");
+  addNewTask("This is the second task");
+
+  it("should delete an item from list", () => {
+    const delTask = removeTask(1);
+    const testValue = ListItems;
+    expect(delTask).toEqual(testValue);
+  });
+});
