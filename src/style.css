@@ -16,6 +16,8 @@ body {
 }
 
 .main {
+  width: 70%;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,7 +27,7 @@ body {
 .toDo_list {
   border: 2px solid rgb(193, 148, 219);
   min-width: 300px;
-  width: 60%;
+  width: 100%;
   max-width: 1000px;
   border-radius: 4px;
   box-shadow: 20px 20px 20px -5px rgba(0, 0, 0, 0.3);
@@ -122,4 +124,65 @@ body {
 
 .completed {
   text-decoration: line-through;
+}
+
+.list-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.checkbox-text-container {
+  display: flex;
+  margin: 0 10px;
+}
+
+.edit-trash-container {
+  display: none;
+}
+
+.fa-ellipsis-vertical {
+  /* display: none; */
+}
+
+.fa-ellipsis-vertical:hover {
+  cursor: pointer;
+}
+
+#edit-btn {
+  background-color: rgb(231, 169, 231);
+  border: none;
+  color: #000;
+  padding: 4px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+#edit-btn:hover {
+  cursor: pointer;
+  color: #fff;
+}
+
+.fa-trash:hover {
+  cursor: pointer;
+}
+
+.editable-list {
+  padding: 5px;
+}
+
+[contenteditable="true"]:active,
+[contenteditable="true"]:focus {
+  border: 1px solid rgb(231, 169, 231);
+  background-color: rgb(235, 207, 235);
+  outline: none;
+  font-weight: 600;
+}
+
+/* Desktop Screen */
+
+@media only screen and (min-width: 768px) {
+  .toDo_list {
+    width: 60%;
+  }
 }
