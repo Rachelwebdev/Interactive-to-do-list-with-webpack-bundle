@@ -36,7 +36,13 @@ body {
 .container {
   display: flex;
   align-items: center;
-  padding: 14px;
+  padding: 2rem 1.5rem 0;
+}
+
+.alert {
+  color: rgb(209, 7, 7);
+  font-weight: 800;
+  text-align: center;
 }
 
 .inputField {

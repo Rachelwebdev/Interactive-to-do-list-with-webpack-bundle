@@ -68,3 +68,18 @@ import {
 //   window.addEventListener("load", displayListTasks(tasksList()));
 // };
 // render();
+
+// import { setLocalStorage } from "./modules/data.js";
+
+import addNewTask from "./modules/addItem.js";
+import displayListTask from "./modules/listCard.js";
+
+const addMeButton = document.querySelector(".insert-btn");
+const inputField = document.getElementById("new-task");
+
+// addMeButton.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   addNewTask();
+//   displayListTask();
+//   inputField.value = "";
+// });

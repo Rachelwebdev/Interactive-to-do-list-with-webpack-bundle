@@ -32,13 +32,14 @@
 //   });
 // };
 import { getLocalStorage } from "./data.js";
+// import addNewTask from "./addItem.js";
 
 const toDoContainer = document.querySelector(".toDoContainer");
 
 const displayListTask = () => {
   toDoContainer.innerHTML = "";
   const taskList = getLocalStorage();
-  console.log(taskList);
+  // console.log(taskList);
   taskList.forEach((task) => {
     const listTasks = `<li class="list-items">
             <div class="checkbox-text-container">
