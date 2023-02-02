@@ -1,10 +1,9 @@
-import { ListItems } from './addItem.js';
-
-const removeCompleted = (id, completed) => {
-  ListItems.filter((element) => element.id === id).forEach((element) => {
-    element.completed = completed;
+const clearCompleted = (toDoListArray) => {
+  toDoListArray = toDoListArray.filter((task) => task.completed === false);
+  toDoListArray.forEach((task, index) => {
+    task.id = index + 1;
   });
-  return ListItems;
+  return toDoListArray;
 };
 
-export default removeCompleted;
+export default clearCompleted;
