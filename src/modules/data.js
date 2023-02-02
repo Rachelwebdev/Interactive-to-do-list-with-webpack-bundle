@@ -32,4 +32,5 @@ export const setLocalStorage = () => {
 
 export const getLocalStorage = () => {
   const taskArray = JSON.parse(localStorage.getItem("myToDoList")) || [];
+  return taskArray;
 };
