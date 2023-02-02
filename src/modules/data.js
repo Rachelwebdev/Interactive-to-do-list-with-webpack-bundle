@@ -10,19 +10,24 @@
 
 const myToDoList = [
   {
-    task: "Continue building todo list project",
+    description: "Continue building todo list project",
     completed: false,
     id: 0,
   },
   {
-    task: "Weekly meal prep",
+    description: "Weekly meal prep",
     completed: true,
     id: 1,
   },
   {
-    task: "Take an evening walk",
+    description: "Take an evening walk",
     completed: true,
-    id: 1,
+    id: 2,
+  },
+  {
+    description: "Join zoom meeting with Elizabeth",
+    completed: true,
+    id: 3,
   },
 ];
 
@@ -34,3 +39,5 @@ export const getLocalStorage = () => {
   const taskArray = JSON.parse(localStorage.getItem("myToDoList")) || [];
   return taskArray;
 };
+
+setLocalStorage();

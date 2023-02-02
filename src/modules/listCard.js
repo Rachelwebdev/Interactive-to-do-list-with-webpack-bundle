@@ -31,20 +31,24 @@
 //     toDoList.appendChild(listItemTask);
 //   });
 // };
+import { getLocalStorage } from "./data.js";
 
 const toDoContainer = document.querySelector(".toDoContainer");
 
 const displayListTask = () => {
   toDoContainer.innerHTML = "";
-  const listTasks = `<li class="list-items">
+  const taskList = getLocalStorage();
+  console.log(taskList);
+  taskList.forEach((task) => {
+    const listTasks = `<li class="list-items">
             <div class="checkbox-text-container">
 
               <!-- input checkbox -->              
-              <input type="checkbox" name="checkbox" id="checkbox" />
+              <input type="checkbox" name="checkbox" id="${task.id}" ${task.completed} />
 
               <!-- editable p tag -->
               <p class="editable-list" contenteditable="true">
-                This paragraph is editable
+              ${task.description}               
               </p>
 
             </div>
@@ -59,8 +63,8 @@ const displayListTask = () => {
             </div>
             
           </li>`;
-
-  toDoContainer.innerHTML = listTasks;
+    toDoContainer.innerHTML = listTasks;
+  });
 };
 
 displayListTask();
