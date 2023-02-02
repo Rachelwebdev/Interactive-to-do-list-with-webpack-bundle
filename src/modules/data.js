@@ -26,11 +26,10 @@ const myToDoList = [
   },
 ];
 
-const setLocalStorage = localStorage.setItem(
-  "toDoList",
-  JSON.stringify(myToDoList)
-);
+export const setLocalStorage = () => {
+  localStorage.setItem("myToDoList", JSON.stringify(myToDoList));
+};
 
-const getLocalStorage = localStorage.getItem(JSON.stringify(myToDoList));
-
-export { setLocalStorage, getLocalStorage };
+export const getLocalStorage = () => {
+  const taskArray = JSON.parse(localStorage.getItem("myToDoList")) || [];
+};
